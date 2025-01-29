@@ -1,5 +1,6 @@
 # Data
-/data/
+/data/**/*.png
+/data/**/*.wav
 
 # Mac OS-specific storage files
 .DS_Store
