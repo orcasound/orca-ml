@@ -112,7 +112,7 @@ if __name__ == "__main__":
         '--example_folder',
         type=Path,
         required=False,
-        default=Path.cwd().parent() / 'data' / 'processed',
+        default=Path.cwd().parent / 'data' / 'processed',
         help=f'Location of positive/, negative/, and unknown/ folders in which to store examples (i.e. one-second wav files spliced from minute-long detections)'
     )
 
