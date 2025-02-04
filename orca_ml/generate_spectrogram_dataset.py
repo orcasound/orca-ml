@@ -121,8 +121,8 @@ if __name__ == "__main__":
         '--top_k',
         type=int,
         required=False,
-        default=0,
-        help=f'Retrieve only the max(k, # of examples in detection) examples from an OrcaHello minute-long detection. k == 0 keeps all examples'
+        default=60,
+        help=f'Retrieve only the max(k, # of examples in detection) examples from an OrcaHello minute-long detection. k == 60 keeps all (up to 60 seconds) examples'
     )
 
     parser.add_argument(
