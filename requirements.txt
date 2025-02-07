@@ -1,0 +1,13 @@
+torch
+torchaudio
+fastai
+librosa
+pydub
+pandas
+numpy
+matplotlib
+ipython
+ipykernel
+seaborn
+spacy
+git+https://github.com/kevinbird15/fastaudio.git@fastaudio_refresh
