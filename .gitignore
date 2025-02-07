@@ -1,4 +1,7 @@
 # Data
+/data/processed/train/*
+/data/processed/val/*
+/data/processed/test/*
 /data/**/*.png
 /data/**/*.wav
 /data/**/*.json
