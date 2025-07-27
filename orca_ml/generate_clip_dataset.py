@@ -83,7 +83,7 @@ def generate(args):
         # Splice out the clips with rank <= k
         # k == 1 assigned to clip with lowest confidence
         # k == n assigned to clip with nth highest confidence
-        # Clips rounded down to nearest second (i.e. start time of 0m:23s:998ms translates to clip_start == 23)
+        # Clips rounded down to nearest second (i.e., start time of 0m:23s:998ms translates to clip_start == 23)
         k_ctr = 1
         for clip in top_k_clips:
             clip_start = int(clip[2]*sample_rate)
