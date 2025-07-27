@@ -116,7 +116,7 @@ if __name__ == "__main__":
         type=Path,
         required=False,
         default=Path.cwd().parent / 'data' / 'processed',
-        help=f'Location of positive/, negative/, and unknown/ folders in which to store clips (i.e. one-second wav files spliced from minute-long detection segments)'
+        help=f'Location of positive/, negative/, and unknown/ folders in which to store clips (i.e., one-second wav files spliced from minute-long detection segments)'
     )
 
     parser.add_argument(
