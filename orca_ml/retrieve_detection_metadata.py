@@ -22,9 +22,12 @@ from pathlib import Path
 import requests
 from tqdm import tqdm
 
-def main(args):
+def retrieve(args):
 
     total_json_list = []
+
+    # Prepare data folders
+    args.metadata_file.parent.mkdir(parents=True, exist_ok=True)
     
     # Format dates for URL
     start_date = f"{args.start_date.strftime('%m')}%2F{args.start_date.strftime('%d')}%2F{args.start_date.strftime('%Y')}"
@@ -82,4 +85,4 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     assert(args.start_date < args.end_date)
-    main(args)
+    retrieve(args)
