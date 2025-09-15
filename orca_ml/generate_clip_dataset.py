@@ -67,7 +67,7 @@ def generate(args):
         clip_list = []
         top_k_clips = []
         for clip in segment['annotations']:
-            clip_list.append((clip['confidence'], clip['id'], clip['startTime'], clip['endTime'],))
+            clip_list.append((clip['confidence'], clip['id'], clip['startTime'],))
         if segment["found"] == "no" or args.top_k == 0:
             top_k_clips = clip_list
         else:
@@ -87,8 +87,13 @@ def generate(args):
         k_ctr = 1
         for clip in top_k_clips:
             clip_start = int(clip[2]*sample_rate)
-            clip_end = int(clip[3]*sample_rate)
+            clip_end = min(int((clip[2] + 3) * sample_rate), waveform.shape[1]) 
             clip_waveform = waveform[:, clip_start:clip_end]
+
+            # print(clip_start)
+            # print(sample_rate)
+            # print(int((clip[2] + 3) * sample_rate))
+            # print(waveform.shape[1])
 
             # Save spliced audio to disk as wav
             filepath = Path(args.clip_folder) / classification / Path(f"k{k_ctr}_conf{round(clip[0], 3)}_{Path(segment['audioUri']).name}_{args.round_name}.wav")
